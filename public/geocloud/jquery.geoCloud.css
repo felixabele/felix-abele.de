@@ -1,0 +1,10 @@
+    .geo_cloud div {
+        background-color: white; cursor: pointer;
+        -moz-box-shadow: 2px 2px 4px #B2B2B2;
+        -webkit-box-shadow: 2px 2px 4px #B2B2B2;
+        box-shadow: 2px 2px 4px #B2B2B2;
+        border: 1px solid #B2B2B2; width: 6px; height: 6px; }
+    .geo_cloud div span {
+        color: black; font-weight: bold; text-shadow: 1px 1px 2px #ffffff; 
+        font-style: normal; margin-left: -10px; 
+    }

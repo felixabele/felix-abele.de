@@ -1,0 +1,127 @@
+    <script type="text/javascript"> 
+
+    $(document).ready(function(){
+
+      // INIT Slider PLugin
+      $("#slider").justAnotherSlider({
+        width: 520, height: 460, carousel: true,
+        goLeft: $('#go_left'), goRight: $('#go_right')
+      });
+      
+      // INIT FancyBox for bigger map
+      $(".map_zoom").fancybox({
+        type: 'ajax',
+        width: 800
+      });
+   
+      
+      <% @maps.each do |map| %>       
+        var el_id = '#map_<%= map.id %>';  
+        $(el_id).geocloud({
+            width:    <%= map.width %>,
+            height:   <%= map.height %>,
+            map_src:  '/images/maps/<%= map.map_file %>',
+            geo_settings: {
+              <%= map.geo_settings %>
+            },
+            ref_point: {
+                <%= map.ref_point %>
+            }                    
+        });
+
+        $(el_id).data('geocloud').drawPoints([
+          <% map.cities.each do |city| %>
+            {title : '<%= city.title %>', size: <%= city.size %>, coord: [<%= city.lon %>, <%= city.lat %>]},    
+          <% end %>
+          ],
+          { css: {},
+            attr: {'class': 'city'},
+            events: {
+              'click': function() {
+                $(this).toggleClass('selected');
+            }}
+          });
+      <% end %>
+
+    // Init Tooltip  
+    $(".city").tipTip();
+    
+  });         
+  </script>      
+  
+  <div id="bd">
+    <h2>jQuery GeoCloud-Plugin</h2>
+    <p>
+      Ein kleines Plugin für das Setzen von Punkten (Orten) auf einer Karte. <br />
+      Dabei werden die Welt-Koordinaten in Pixel umgerechnet.<br />
+      Weitere Karten werden noch erstellt.
+    </p>
+
+    <div id="go_left" title="Vorherige anzeigen"></div>
+    <div id="slider">
+      <ul>
+        <% @maps.each do |map| %>
+        <li>
+          <h3><%= map.country %></h3>
+          <a href="map/<%= map.country %>/show.html" title="Gro&szlig;e Version der <%= map.country %> Karte" class="map_zoom">
+            <img src="images/zoom-plus.png" alt="Zoom" /></a><br style="clear:left;">
+          <div id="map_<%= map.id %>"></div>
+        </li>
+        <% end %>
+      </ul>      
+    </div>    
+    <div id="go_right" title="N&auml;chste anzeigen"></div>
+    
+    <a href="https://github.com/felixabele/just-another-slider" title="Just another jQuery Slider Plugin" target="_blank" class="slider_link">
+      <img src="images/slider_link.jpg" alt="Just Another Slider" /></a>
+    <br clear="all" /> <br />        
+    
+    <h2>Beispiel-Code</h2>
+    <p>Initialisierung des Plugins</p>
+    <pre class="brush: js; ruler: false;">
+      $('#map_cloud').geocloud({
+          width: 306,             // Breite der Karte  
+          height: 400,            // Höhe der Karte  
+          map_src: 'italy_s.png', // Pfad zur Karten-Grafik
+          geo_settings: {         // wird mit jeder Karte mitgeliefert
+              x_corr: 0.81,
+              y_corr: 1.10,
+              coef: 0.0316
+          },
+          ref_point: {            // wird mit jeder Karte mitgeliefert
+              pixel_point: [149, 208], 
+              coord: [12.4942486, 41.8905198]
+          }                    
+      });   
+    </pre>
+
+    <p>setzen von Punkten mit Events</p>
+    <pre class="brush: js;">
+      $('#map_cloud').data('geocloud').drawPoints([
+        {title: 'Roma',      size: 24, coord: [12.4942486, 41.8905198]},
+        {title: 'Trento',    size: 18, coord: [11.1190591, 46.0667123]},
+        {title: 'Palermo',   size: 13, coord: [13.3614059, 38.11564]},
+        {title: 'Catanzaro', size: 10, coord: [16.5877572, 38.9105359]},
+        {title: 'Genova',    size: 18, coord: [8.93398890, 44.4070624]},
+        {title: 'Aosta',     size: 11, coord: [7.313234,   45.7350001]},
+        {title: 'Napoli',    size:  9, coord: [14.2525421, 40.8399833]},
+        {title: 'Bari',      size: 20, coord: [16.8721133, 41.1259135]},
+        {title: 'Venezia',   size: 17, coord: [12.3387844, 45.4343363]},
+        {title: 'Milano',    size:  8, coord: [9.1881714,  45.463681]},
+        {title: 'Cagliari',  size: 14, coord: [9.10932389, 39.2154086]}
+      ],
+      {
+          css: {},      // weitere CSS-Eigenschaften für Punkte angeben
+          attr: {},     // weitere Attribute angeben (title, class, etc..)
+
+          // Events übergeben (event.data.city enthält alle Werte die im Point übergeben werden {title, size, coor, etc..})
+          events: {     
+              'mouseover': function(event) {},
+              'click': function(event) {
+                  alert(event.data.city.title);
+              }           
+          }
+      });
+    </pre>
+    <br clear="all" />
+  </div>

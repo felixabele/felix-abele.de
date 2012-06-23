@@ -1,0 +1,39 @@
+
+<div id="content">
+    <h1>Cookie-Spy</h1>
+
+    <p>
+        <strong>Der Cookie-Spy analysiert und überwacht Webseiten um eventuelle Klick-Betrüger aufzudecken. <br />
+        Er registriert und analysiert alle Affiliate Cookies und schlägt gegebenenfalls Alarm sollte eine<br />
+        Webseite im Hintergrund Cookies droppen ohne das ein Klick erfolgt.</strong>
+    </p>
+    <p>
+        Enticklung bei Traffic-Dealer GbR. Die Plattform ist teilweise in <a href="http://www.lassosoft.com/">Lasso 8.5</a> implementiert mit einer MySQL-Datenbank.<br />
+        Das Herz der Applikation, Client-Header Analyse, Traffic-Überwachung so wie das erstellen von Screenshots der überwachten Seiten ist in Ruby implementiert.
+    </p>
+    <p>
+        Die Besonderheit ist, dass sich die Applikation bei der Überwachung exakt wie ein normaler Benutzer verhält
+        Bilder-Quellen, Javascript und IFrame Einbindungen werden so berücksichtigt.
+    </p>    
+    
+    <p><a href="http://www.cookie-spion.de/">cookie-spion.de</a></p>
+
+
+    <h2>Herausforderung</h2>
+    <ul>
+        <li>Traffic-Capturing mit Ruby und rausfiltern der essenziellen Informationen</li>
+        <li>Webseiten Interpretation exakt wie im Browser</li>
+        <li>Hohe Performance obwohl Parallele Abfragen schwer möglich sind.</li>
+    </ul>
+
+    <h2>Technologien</h2>
+    <ul>
+        <li>Lasso 8.5</li>
+        <li>Ruby 1.9</li>
+        <li>MySQL</li>
+    </ul><br />
+
+    <p>
+        <img src="img/cookie_spy.jpg" alt="cookie-spy.de" />
+    </p>
+</div>

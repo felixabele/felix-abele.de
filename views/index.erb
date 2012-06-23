@@ -1,0 +1,22 @@
+    
+  <!--Project-Graph -->
+  <script type="text/javascript" src="js/project_graph.js"></script>
+  <script type="text/javascript"> 
+    
+    // Projects
+    var projects = [ 
+      <% unless @projects.nil? %>
+        <% @projects.each do |project| %>
+            <%= project.custom_json %>,
+        <% end %>
+      <% end %>
+    ];
+
+    $(document).ready(function(){
+      projectGraph.init();
+    });
+  </script>  
+  
+  <div id="canvasWrapper">
+      <canvas width="800" height="400" id="stageCanvas"></canvas>
+  </div>        

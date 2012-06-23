@@ -1,0 +1,46 @@
+<%#
+# Shows Details of a Map
+%>
+
+<% if @map.nil? %>
+
+<h2>Leider haben wir keine Karte mit dieser ID</h2>
+
+<% else %>
+<script type="text/javascript"> 
+$(document).ready(function(){      
+    $('#map').geocloud({
+        width:    <%= @map.width %>,
+        height:   <%= @map.height %>,
+        map_src:  '/images/maps/<%= @map.map_file %>',
+        geo_settings: {
+          <%= @map.geo_settings %>
+        },
+        ref_point: {
+            <%= @map.ref_point %>
+        }                    
+    });
+
+    $('#map').data('geocloud').drawPoints([
+      <% @map.cities.each do |city| %>
+        {title : '<%= city.title %>', size: <%= city.size %>, coord: [<%= city.lon %>, <%= city.lat %>]},    
+      <% end %>
+      ],
+      { css: {},
+        attr: {'class': 'city'},
+        events: {
+          'click': function() {
+            $(this).toggleClass('selected');
+        }}
+      });
+
+  // Init Tooltip  
+  $(".city").tipTip();    
+}); 
+</script>  
+
+
+<h2><%= @map.name %></h2>
+<div id="map"></div>
+
+<% end %>
