@@ -39,3 +39,10 @@ get '/project/:id' do
   @project = Project.find(params[:id])
   erb :project, :layout => :ajax
 end
+
+# ===============================
+# => Project-Detail
+# ===============================
+get '/map/example' do   
+  erb :example
+end
