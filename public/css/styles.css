@@ -83,7 +83,10 @@ a img {
 /* Code */
 pre {    }
 .slider_link { 
-    position: absolute; left: 500px; top: 780px}
+    position: absolute; left: 400px; top: 600px;
+    z-index: 20; 
+}
+
 
 /* MAPs  */
 .map {
