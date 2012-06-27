@@ -4,12 +4,12 @@
 
 <% if @map.nil? %>
 
-<h2>Leider haben wir keine Karte mit dieser ID</h2>
+<h2>Leider haben wir keine Karte gefunden</h2>
 
 <% else %>
 <script type="text/javascript"> 
 $(document).ready(function(){      
-    $('#map').geocloud({
+    $('#b_map').geocloud({
         width:    <%= @map.width %>,
         height:   <%= @map.height %>,
         map_src:  '/images/maps/<%= @map.map_file %>',
@@ -21,8 +21,8 @@ $(document).ready(function(){
         }                    
     });
 
-    $('#map').data('geocloud').drawPoints([
-      <% @map.cities.each do |city| %>
+    $('#b_map').data('geocloud').drawPoints([
+      <% @cities.each do |city| %>
         {title : '<%= city.title %>', size: <%= city.size %>, coord: [<%= city.lon %>, <%= city.lat %>]},    
       <% end %>
       ],
@@ -41,6 +41,6 @@ $(document).ready(function(){
 
 
 <h2><%= @map.name %></h2>
-<div id="map"></div>
+<div id="b_map"></div>
 
 <% end %>

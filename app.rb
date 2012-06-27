@@ -29,6 +29,7 @@ end
 # ===============================
 get '/map/:country/show.html' do   
   @map = Map.byCountry(params[:country], 'l')
+  @cities = City.find_all_by_country(params[:country])
   erb :show, :layout => :ajax
 end
 
