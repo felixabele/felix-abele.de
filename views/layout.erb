@@ -18,6 +18,7 @@
     <!-- Syntax Highlighting, Thanks to: http://alexgorbatchev.com/ -->
     <script type="text/javascript" src="/js/shCore.js"></script>
     <script type="text/javascript" src="/js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="/js/shBrushCss.js"></script>
     <link type="text/css" rel="stylesheet" href="/css/shCoreDefault.css"/>
     <script type="text/javascript">
       SyntaxHighlighter.defaults['toolbar'] = false;
@@ -25,14 +26,14 @@
     </script>    
     
     <!-- FancyBox: http://fancybox.net/ -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />
-    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css" media="screen" />
+    <script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
     
     <!-- import the Easel library. Downloaded from: http://easeljs.com/ -->
-    <script type="text/javascript" src="js/easel.js"></script>    
+    <script type="text/javascript" src="/js/easel.js"></script>    
     
     <!-- Import "JustAnotherSlider" -->
-    <script type="text/javascript" src="js/jquery.justAnotherSlider.js"></script>     
+    <script type="text/javascript" src="/js/jquery.justAnotherSlider.js"></script>     
     
     <!-- General CSS -->
     <link type="text/css" rel="stylesheet" href="/css/styles.css">    
@@ -45,16 +46,7 @@
     <ul id="top_menu">
       <li><a href="/"><b>P</b>rojekte</a></li>
       <li><a href="/code"><b>C</b>ode</a></li>
-    </ul><br clear="all" /><br />
-    
-    <div id="header">
-      <img src="images/felix_abele_half_old.jpg" class="profile_img" />
-      <img src="images/felix_abele_h1.png" title="Felix Abele" alt="Felix Abele" />
-      <p>
-          Meine Berufliche Seite als Webentwickler<br />
-          Erkunden Sie hier private so wie berufliche Projekte der letzten Jahre. 
-      </p>    
-    </div>      
+    </ul><br clear="all" /><br />         
     
     <%= yield %>  
   </div>

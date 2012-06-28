@@ -50,7 +50,7 @@ a img {
 .fancybox-inner h2 {
     margin-top: 0;}
 #bd {
-    padding-left: 120px;    }
+    padding-left: 20px;    }
 
 /* MENU */
 #top_menu {
@@ -82,7 +82,10 @@ a img {
 /* Code */
 pre {    }
 .slider_link { 
-    position: absolute; left: 500px; top: 780px}
+    position: absolute; left: 400px; top: 600px;
+    z-index: 20; 
+}
+
 
 /* MAPs  */
 .map {
@@ -96,7 +99,7 @@ pre {    }
 .map .map_footer a {
    margin-left: 14px; font-size: 11px;}
 .selected {
-    border-color:#3333ff !important;}
+    border-color:#3333ff !important; background-color: #e3e3e3 !important;}
 .map_zoom {
     float: right; margin: 10px 80px 0 0;}
 .map_zoom img {

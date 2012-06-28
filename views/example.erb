@@ -1,0 +1,177 @@
+    <script type="text/javascript"> 
+
+    $(document).ready(function(){   
+
+      var el_id = '#map';  
+      $(el_id).geocloud({
+          width:    304,
+          height:   400,
+          map_src:  '/images/maps/germany_s.gif',
+          geo_settings: {
+            x_corr: 0.76, y_corr: 1.22, coef: 0.0240139
+          },
+          ref_point: {
+              pixel_point: [137, 215], coord: [9.92968989, 51.538352]
+          }
+      });
+
+      $(el_id).data('geocloud').drawPoints([
+          {title : 'Berlin',      size: 78, coord: [13.4061, 52.5192], population: '3.460.725', area: '887,70'},
+          {title : 'Hamburg',     size: 36, coord: [9.99368, 53.5511], population: '1.786.448', area: '755,16'},
+          {title : 'München',     size: 28, coord: [11.5771, 48.1366], population: '1.353.186', area: '310,69'},
+          {title : 'Köln',        size: 20, coord: [6.96028, 50.9375], population: '1.007.119', area: '405,17'},
+          {title : 'Frankfurt a.M.', size: 14, coord: [8.68213, 50.1109], population: '679.664', area: '248,31'},
+          {title : 'Stuttgart',   size: 12, coord: [9.18176, 48.7754], population: '606.588', area: '207,35'},
+          {title : 'Düsseldorf',  size: 12, coord: [6.77346, 51.2277], population: '588.735', area: '217,22'},
+          {title : 'Dortmund',    size: 12, coord: [7.46529, 51.5136], population: '580.444', area: '280,71'},
+          {title : 'Essen',       size: 12, coord: [7.01156, 51.4556], population: '574.635', area: '210,32'},
+          {title : 'Bremen',      size: 10, coord: [8.80169, 53.0793], population: '547.340', area: '325,42'},
+          {title : 'Dresden',     size: 10, coord: [13.7373, 51.0504], population: '523.058', area: '328,31'},
+          {title : 'Leipzig',     size: 10, coord: [12.3731, 51.3397], population: '522.883', area: '297,36'},
+          {title : 'Hannover',    size: 10, coord: [9.73201, 52.3759], population: '522.686', area: '204,14'},
+          {title : 'Nürnberg',    size: 10, coord: [11.0767, 49.4520], population: '505.664', area: '186,38'},
+          {title : 'Duisburg',    size: 10, coord: [6.76233, 51.4344], population: '489.599', area: '232,83'},
+          {title : 'Bochum',      size:  8, coord: [7.21624, 51.4818], population: '374.737', area: '145,66'},
+          {title : 'Wuppertal',   size:  6, coord: [7.15076, 51.2562], population: '349.721', area: '168,39'},
+          {title : 'Bonn',        size:  6, coord: [7.09821, 50.7374], population: '324.899', area: '141,22'},
+          {title : 'Bielefeld',   size:  6, coord: [8.53029, 52.0213], population: '323.270', area: '257,92'},
+          {title : 'Mannheim',    size:  6, coord: [8.46604, 49.4875], population: '313.174', area: '144,96'},
+          {title : 'Karlsruhe',   size:  4, coord: [8.37994, 49.0091], population: '294.761', area: '173,46'}
+        ],
+        { css: {},
+          attr: {'class': 'city'},
+          events: {
+            'mouseover': function() {
+              $(this).addClass('selected');
+            },
+            'mouseout': function() {
+              $(this).removeClass('selected');
+            },
+            'click': function(event) {
+              $('#city_info').html(
+                 "<b><u>"+ event.data.city.title +"</u></b><br />"
+                +"<b>Bevölkerung: </b>"+ event.data.city.population +"<br />"
+                +"<b>Fläche: </b>"+ event.data.city.area +" km²<br />"
+              );
+          }}
+        });
+
+    // Init Tooltip  
+    $(".city").tipTip();    
+  });         
+  </script>
+  
+  <style>
+    #map {
+      float: left;}
+    #city_info {
+      float: left; margin: 40px 0 0 20px; padding: 10px;
+      width: 180px; height: 60px;
+      -moz-border-radius: 4px; border-radius: 4px;
+      -moz-box-shadow: 2px 2px 4px #B2B2B2; -webkit-box-shadow: 2px 2px 4px #B2B2B2; box-shadow: 2px 2px 4px #B2B2B2;
+    }
+  </style>
+  
+  <div id="bd">
+    <h1>GeoCloud - ein Beispiel</h1>
+    <p>
+      Gelistet werden die 20 bevölkerungsreichsten Städte in Deutschland.<br />
+      Bei einem Klick-Event auf eine Stadt werden Information zu dieser eingeblendet,<br />
+      die Größe des punktes visualisiert die Bevölkerungszahl.
+    </p>
+    <p>
+      <a href="https://github.com/felixabele/GeoCloud" title="Repository bei Github">GeoCloud jQuery-Plugin bei Github</a>
+    </p><br />
+
+    <div style="margin-left: 40px;">
+      <div id="map"></div><br />
+      <div id="city_info">Ein Klick auf eine Stadt zeigt ihre Größe an.</div>
+    </div><br clear="all" />
+
+    <h2>JavaScript-Code</h2>
+    <p>Initialisierung des Plugins</p>
+    <pre class="brush: js; ruler: false;">
+    $(document).ready(function(){   
+
+      var el_id = '#map';  
+      $(el_id).geocloud({
+          width:    304,
+          height:   400,
+          map_src:  '/images/maps/germany_s.gif',
+          geo_settings: {
+            x_corr: 0.76, y_corr: 1.22, coef: 0.0240139
+          },
+          ref_point: {
+              pixel_point: [137, 215], coord: [9.92968989, 51.538352]
+          }
+      });
+
+      $(el_id).data('geocloud').drawPoints([
+          {title : 'Berlin',      size: 78, coord: [13.4061, 52.5192], population: '3.460.725', area: '887,70'},
+          {title : 'Hamburg',     size: 36, coord: [9.99368, 53.5511], population: '1.786.448', area: '755,16'},
+          {title : 'München',     size: 28, coord: [11.5771, 48.1366], population: '1.353.186', area: '310,69'},
+          {title : 'Köln',        size: 20, coord: [6.96028, 50.9375], population: '1.007.119', area: '405,17'},
+          {title : 'Frankfurt a.M.', size: 14, coord: [8.68213, 50.1109], population: '679.664', area: '248,31'},
+          {title : 'Stuttgart',   size: 12, coord: [9.18176, 48.7754], population: '606.588', area: '207,35'},
+          {title : 'Düsseldorf',  size: 12, coord: [6.77346, 51.2277], population: '588.735', area: '217,22'},
+          {title : 'Dortmund',    size: 12, coord: [7.46529, 51.5136], population: '580.444', area: '280,71'},
+          {title : 'Essen',       size: 12, coord: [7.01156, 51.4556], population: '574.635', area: '210,32'},
+          {title : 'Bremen',      size: 10, coord: [8.80169, 53.0793], population: '547.340', area: '325,42'},
+          {title : 'Dresden',     size: 10, coord: [13.7373, 51.0504], population: '523.058', area: '328,31'},
+          {title : 'Leipzig',     size: 10, coord: [12.3731, 51.3397], population: '522.883', area: '297,36'},
+          {title : 'Hannover',    size: 10, coord: [9.73201, 52.3759], population: '522.686', area: '204,14'},
+          {title : 'Nürnberg',    size: 10, coord: [11.0767, 49.4520], population: '505.664', area: '186,38'},
+          {title : 'Duisburg',    size: 10, coord: [6.76233, 51.4344], population: '489.599', area: '232,83'},
+          {title : 'Bochum',      size:  8, coord: [7.21624, 51.4818], population: '374.737', area: '145,66'},
+          {title : 'Wuppertal',   size:  6, coord: [7.15076, 51.2562], population: '349.721', area: '168,39'},
+          {title : 'Bonn',        size:  6, coord: [7.09821, 50.7374], population: '324.899', area: '141,22'},
+          {title : 'Bielefeld',   size:  6, coord: [8.53029, 52.0213], population: '323.270', area: '257,92'},
+          {title : 'Mannheim',    size:  6, coord: [8.46604, 49.4875], population: '313.174', area: '144,96'},
+          {title : 'Karlsruhe',   size:  4, coord: [8.37994, 49.0091], population: '294.761', area: '173,46'}
+        ],
+        { css: {},
+          attr: {'class': 'city'},
+          events: {
+            'mouseover': function() {
+              $(this).addClass('selected');
+            },
+            'mouseout': function() {
+              $(this).removeClass('selected');
+            },
+            'click': function(event) {
+              $('#city_info').html(
+                 "<b><u>"+ event.data.city.title +"</u></b><br />"
+                +"<b>Bevölkerung: </b>"+ event.data.city.population +"<br />"
+                +"<b>Fläche: </b>"+ event.data.city.area +" km²<br />"
+              );
+          }}
+        });
+    </pre><br />
+
+    <h2>HTML-Code</h2>
+    <pre class="brush: js;">
+      <div id="map"></div><br />
+      <div id="city_info"></div>
+    </pre><br />
+    
+    <h2>CSS-Code</h2>    
+    <pre class="brush: css;">
+      #map {
+        float: left;
+      }
+
+      #city_info {
+        float: left; 
+        margin: 40px 0 0 20px; 
+        padding: 10px;
+        width: 180px; 
+        height: 60px;
+        border-radius: 4px; -moz-border-radius: 4px;
+        box-shadow: 2px 2px 4px #B2B2B2; -moz-box-shadow: 2px 2px 4px #B2B2B2; -webkit-box-shadow: 2px 2px 4px #B2B2B2;
+      }
+    </pre>    
+  </style>    
+    
+    <br clear="all" />
+-->
+  </div>
