@@ -98,6 +98,7 @@ var projectGraph = (function () {
         s.onPress = function() {
             open_fancy(proj);
         }
+        
         Ticker.addListener(stage);
     }
 
