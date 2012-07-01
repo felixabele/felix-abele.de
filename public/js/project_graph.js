@@ -98,7 +98,7 @@ var projectGraph = (function () {
         s.onPress = function() {
             open_fancy(proj);
         }
-        Ticker.addListener(window);
+        Ticker.addListener(stage);
     }
 
     // Draw a vertical Line (connected to the Timeline)
