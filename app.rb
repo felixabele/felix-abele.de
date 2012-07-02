@@ -47,3 +47,16 @@ end
 get '/map/example' do   
   erb :example
 end
+
+# ===============================
+# => Geocoding-Index
+# ===============================
+get '/geocode' do   
+  erb :geocode
+end
+
+# --- Submit Geocoder-Form
+post '/geocode' do   
+  @places = params[:places]
+  erb :geocode
+end
