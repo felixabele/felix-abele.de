@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'yaml'
 require 'active_record'
+require 'geocoder'
 
 require './config/db'
 require './models/map'
@@ -58,5 +59,16 @@ end
 # --- Submit Geocoder-Form
 post '/geocode' do   
   @places = params[:places]
+  @geocodes = Array.new;
+  
+  @places.split(',').each do |place|
+    geo = Geocoder.search(place.strip)
+    unless geo.nil?
+      pl = geo.first
+      @geocodes.push( 
+        "{title: '#{pl.address_components.first['long_name']}', size: 10, coord: [#{pl.geometry['location']['lng']}, #{pl.geometry['location']['lat']}]}" 
+      );
+    end
+  end
   erb :geocode
 end

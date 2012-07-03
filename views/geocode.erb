@@ -1,9 +1,64 @@
      
   <div id="bd">
-    <h2>Geocoding for fun</h2>
+    <h2>Koordinaten für eine Reihe von Städten erstellen</h2>
+    <p>
+      hier kannst du dir die Geo-Koordinaten einer Reihe von Städten erstellen lassen.<br />
+      Die Städte müssen kommagetrennt eingegeben werden.
+    </p>
     
     <form method="post" action="">
-      <textarea cols="60" rows="6" name="places"><%= @places %></textarea><br /><br />
+      <p>
+      <textarea cols="60" rows="6" name="places"><%= @places %></textarea>
+      <% if @places.nil? or @places.empty? %>
+      <br /><strong>Beispiel: </strong> <i>Berlin, Hamburg, München</i>
+      <% end %>      
+        
+      <br /><br />
       <input type="submit" value="Koordinaten berechnen" />
+      </p>
     </form>
+
+    <% unless @places.nil? or @geocodes.empty? %>
+    <h2>Daten als JSON</h2>
+    <p>
+      <pre><%= @geocodes.join(",\n") %></pre>
+    </p>
+    <% end %>
+    
+    
+    <h2>Ruby Geocoder-Gem</h2>
+    <p>
+      Dies ist ein kleines Beispiel, in dem ich das Geocoder Gem von Alex Reisner verwendet habe, darauf möchte ich an dieser Stelle kurz hinweisen.<br >
+      Ich bin ein großer Fan davon. Weitere Details findet ihr unter: <a href="http://www.rubygeocoder.com/">Ruby Geocoder</a>.
+    </p>
+    <p>
+      <strong>hier ein Auszug des Quellcodes:</strong>
+    </p>
+    <pre class="brush: ruby; ruler: false;">
+      require 'geocoder'
+
+      @places = params[:places] # "Berlin, Hamburg, München"
+      @places.split(',').each do |place|
+        geo = Geocoder.search(place)
+        unless geo.nil?
+          pl = geo.first
+          @geocodes.push( 
+            "{title: '#{pl.address_components.first['long_name']}', size: 10, coord: [#{pl.geometry['location']['lng']}, #{pl.geometry['location']['lat']}]}" 
+          );
+        end
+      end      
+    </pre>
+    
+    <p>
+      <strong>Und die Ausgabe als JSON</strong>
+    </p>
+    <pre class="brush: js; ruler: false;">
+      {title: 'Berlin', size: 10, coord: [13.4060912, 52.519171]},
+      {title: 'Hamburg', size: 10, coord: [9.9936818, 53.5510846]},
+      {title: 'Munich', size: 10, coord: [11.5770851, 48.1366069]}   
+    </pre>    
   </div>
+
+<p>
+  <a href="/code" title="Zurück zum jQuery GeoCloud-Plugin">&raquo; zum jQuery GeoCloud-Plugin</a>
+</p>
