@@ -26,6 +26,13 @@ get '/code' do
 end
 
 # ===============================
+# => Curriculum Vitae
+# ===============================
+get '/curriculum-vitae' do
+  erb :cv, :layout => false
+end
+
+# ===============================
 # => Map-Detail
 # ===============================
 get '/map/:country/show.html' do   
