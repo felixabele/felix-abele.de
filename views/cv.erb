@@ -22,7 +22,7 @@
       table, table tr td { border-collapse: collapse;}
       table tr th {color: #383838; text-align: left; vertical-align: top;}
       
-      h1 {color: #383838; margin-bottom: 2px;}
+      h1 {color: #383838; margin-bottom: 2px; font-size: 42px}
       h2 {border: 1px solid #e0e0e0; border-left: 20px solid #e0e0e0; border-right: none;
           padding: 4px 0 4px 12px; color: #383838; margin-top: 30px; margin-bottom: 10px}
       
@@ -31,7 +31,7 @@
       
       .subtitle {font-size: 14px; font-style: italic; margin-bottom: 20px;}
       
-      #address { width: 240px; float: right}
+      #address { width: 400px; float: right; font-size: 13px}
       #address tr th { text-align: left}
       #address .street {color: #383838;}
       
@@ -48,14 +48,15 @@
 
   <div id="bd">
 
-    <h1>Bla Bla Haudegen</h1>
-    <div class="subtitle">Bla Bla ist der beste</div>
+    <h1>Felix Abele</h1>
+    <div class="subtitle">Diplom Informatiker (FH) - Webapplication Engineer</div>
     <img src="http://placehold.it/260x180" title="Profilbild" class="profilbild" />
 
     <table id="address">
+      <tr><th>Geboren:</th><td>22.07.1983, München</td></tr>
       <tr><td colspan="2"><hr /></td></tr>
-      <tr><th>Telefon:</th><td>28377236</td></tr>
-      <tr><th>E-Mail:</th><td>bla@hot.de</td></tr></tr
+      <tr><th>Telefon:</th><td>0176 3838 6281</td></tr>
+      <tr><th>E-Mail:</th><td>felix.abele@gmail.com</td></tr></tr
       <tr><th>Web:</th><td><a href="http://www.felix-abele.de/" target="_blank">felix-abele.de</a></td></tr>
       <tr><th>Code:</th><td><a href="https://github.com/felixabele/" target="_blank">github.com/felixabele</a></td></tr>            
       <tr>
@@ -82,21 +83,96 @@
     <p>Thumbnail markup is simple—a ul with any number of li elements is all that is required. 
        It's also super flexible, allowing for any type of content with just a bit more markup to wrap your contents.</p>    
     
+    
+    <!-- Ausbildung -->
+    <h2>Ausbildung</h2>
+    <table class="timeline">      
+
+      <tr>
+        <th>2004 - 2008</th>
+        <td>Studium der Medieninformatik an der Beuth Hochschule für Technik, Berlin<br /> 
+          <strong>Abschluss:</strong> <i>Informatiker Diplom (FH)</i></td>
+      </tr>
+      <tr>
+        <th>1999 - 2004</th>
+        <td>Louise-Schroeder-Gymnasium, München<br />
+          <strong>Abschluss:</strong> <i>Allg. Hochschulreife (Abitur)</i>
+        </td>
+      </tr>      
+      <tr>
+        <th>1993 - 1999</th>
+        <td>Deutsche Schule, Rom</td>
+      </tr>      
+      <tr>
+        <th>1990 - 1993</th>
+        <td>Rudolf Steiner Schule, Schondorf</td>
+      </tr>
+    </table>
+    
+    
     <!-- Beruf. Lebenslauf -->
     <h2>Beruflicher Werdegang</h2>
     <table class="timeline">
       <tr>
-        <th>2006 - 2009</th>
-        <td>with any number of li elements is all that is required.<br /> 
-        It's also super flexible</td>
+        <th>08/2009 - heute</th>
+        <td>Traffic-Dealer GbR, <a href="http://www.traffic-dealer.de">www.traffic-dealer.de</a> , angestellt, CTO<br />
+          <i>Aufgabe:</i> Haupt-Ansprechpartner für alle technischen Fragestellungen im Unternehmen,<br />
+          Projektplanung, -implementierung und -betreuung von Web-basierten Applikationen.<br />
+          <i>Branche:</i> Internet</td>
       </tr>
-      
       <tr>
-        <th>2009 - 2001</th>
-        <td>with any number of li elements is all that is required.<br /> 
-        It's also super flexible d shsjg dsar 7w7fdz </td>
+        <th>01/2009 - 08/2009</th>
+        <td>Markencafé.de, angestellt<br />
+          <i>Aufgabe:</i> Diplomarbeit zum Thema "Performance- und Sicherheits-Optimierungen<br /> 
+          in Ruby on Rails" bei der Firma Rheingau Ventures<br />
+          <i>Branche:</i> Internet</td>
+      </tr> 
+      <tr>
+        <th>07/2008 - 12/2008</th>
+        <td>Sportme, <a href="http://www.sportme.de">www.sportme.com</a>, Praktikum<br />
+          <i>Aufgabe:</i> 6 Monate Praktikum als Ruby on Rails und Flash/Flex Entwickler<br />
+          <i>Branche:</i> Internet</td>
+      </tr>
+      <tr>
+        <th>04/2007 - 08/2008</th>
+        <td>Magix AG, <a href="http://www.magix.de">www.magix.com</a>, Werkstudent<br />
+          <i>Aufgabe:</i> Betreuung des Showrooms und die Leitung von Programm-Schulungen<br />
+          <i>Branche:</i> Informationstechnologie & -dienste</td>
+      </tr>       
+      <tr>
+        <th>03/2005 - 06/2008</th>
+        <td>BREAD & Butter, <a href="http://www.breadandbutter.com">www.breadandbutter.com</a>, Freelancer<br />
+          <i>Aufgabe:</i> Kundenbetreuung für italienisch-, spanisch- und englischsprachige<br />
+          <i>Branche:</i> Mode/Bekleidungsindustrie</td>
+      </tr>
+      <tr>
+        <th>Nebenbei</th>
+        <td>Mehrere Aufträge als Selbstständiger im Bereich Webdesign und 3d-Modellierung</td>
       </tr>      
     </table>
+    
+    
+    <!-- Sprachen -->
+    <h2>Sprachen</h2>
+    <table class="skills">
+      <tr>
+        <th>Deutsch</th>
+        <td>Muttersprache</td>
+      </tr>
+      <tr>
+        <th>Italienisch</th>
+        <td>fließend</td>
+      </tr>
+      <tr>
+        <th>Englisch</th>
+        <td>sehr gut</td>
+      </tr>
+      <tr>
+        <th>Spanisch</th>
+        <td>gut</td>
+      </tr>
+    </table><br clear="all" />
+    
     
     <!-- Skills -->
     <h2>Fähigkeiten</h2>
