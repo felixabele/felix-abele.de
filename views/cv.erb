@@ -17,12 +17,12 @@
     <link type="text/css" rel="stylesheet" href="/css/styles.css">    
     
     <style>
-      #bd {width: 800px}
+      #bd {width: 800px; font-size: 1.1em; line-height: 1.4em}
       
       table, table tr td { border-collapse: collapse;}
       table tr th {color: #383838; text-align: left; vertical-align: top;}
       
-      h1 {color: #383838; margin-bottom: 2px; font-size: 42px}
+      h1 {color: #383838; margin-bottom: 12px; font-size: 42px; text-shadow: 2px 2px 3px #cccccc;}
       h2 {border: 1px solid #e0e0e0; border-left: 20px solid #e0e0e0; border-right: none;
           padding: 4px 0 4px 12px; color: #383838; margin-top: 30px; margin-bottom: 10px}
       
@@ -31,7 +31,7 @@
       
       .subtitle {font-size: 14px; font-style: italic; margin-bottom: 20px;}
       
-      #address { width: 400px; float: right; font-size: 13px}
+      #address { width: 400px; float: right;}
       #address tr th { text-align: left}
       #address .street {color: #383838;}
       
@@ -40,8 +40,17 @@
       .timeline td { padding-top: 6px}
       .timeline th {padding: 10px 20px 0 20px; }
       
-      .skills { float: left; width: 230px; margin: 10px;}
-      .skills .tbl_head { background-color: #f6f6f6; color: #383838}
+      .skills { font-size: 0.9em}
+      .skills, .languages { float: left; width: 230px; margin: 10px; margin-right: 24px;}
+      .skills .tbl_head { background-color: #f6f6f6; color: #383838; padding: 3px; border-bottom: 6px solid white}
+      .skills tbody tr th, .skills tbody tr td { padding: 4px 0 0 8px; font-size: 0.9em}
+ 
+      #footer {
+        margin-top: 40px; border-top: 1px dashed #cccccc; padding: 10px 20px; 
+      }
+      #footer li {
+        display: block; float: left; padding: 0 16px; list-style: none;
+      }
     </style>    
 </head>
 <body>   
@@ -50,7 +59,7 @@
 
     <h1>Felix Abele</h1>
     <div class="subtitle">Diplom Informatiker (FH) - Webapplication Engineer</div>
-    <img src="http://placehold.it/260x180" title="Profilbild" class="profilbild" />
+    <img src="/images/felix_abele_half_big.jpg" title="Profilbild" class="profilbild" />
 
     <table id="address">
       <tr><th>Geboren:</th><td>22.07.1983, München</td></tr>
@@ -71,17 +80,18 @@
     
     <!-- Profil -->
     <h2>Profil</h2>
-    <p>folios, and much more. They can be links or static content.<br />
-      Simple, flexible markup</p>
-    <p>Thumbnail markup is simple—a ul with any number of li elements is all that is required. 
-       It's also super flexible, allowing for any type of content with just a bit more markup to wrap your contents.</p>
+    <p>Programmieren macht Spaß. Das Streben nach Eleganz ohne den funktionalen Fokus aus den Augen<br /> 
+      zu verlieren ist eine willkommene Herausforderung.<br />
+    Die Dynamic neuer Technologien und der schnelle Wandel des Umfeldes sorgen dafür, dass der Job nie langweilig wird.</p>
+    <p>Diese Motivation will ich verkörpern und dabei andere Geschäftsbereiche von Design über Marketing bis hin zur<br /> 
+      Benutzerbetreuung miteinbeziehen</p>
     
     <!-- Ziele -->
     <h2>Ziel</h2>
-    <p>folios, and much more. They can be links or static content.<br />
-      Simple, flexible markup</p>
-    <p>Thumbnail markup is simple—a ul with any number of li elements is all that is required. 
-       It's also super flexible, allowing for any type of content with just a bit more markup to wrap your contents.</p>    
+    <p>Ich suche ein professionelles Umfeld in dem ich mich persönlich und fachlich weiterentwickeln kann.<br />
+      Einen regen Austausch unter Kollegen mit ambitionierten Zielen. Und natürlich meinen Beitrag dazu leisten.</p>
+    <p>Gerne bringe ich mich mit breiten und auch interdisziplinären Interessen ein. <br />
+      Meine Passion für zukunftsorientierte Technologien motivieren mich Projekte ständig weiterzuentwickeln und zu optimieren.</p>    
     
     
     <!-- Ausbildung -->
@@ -91,12 +101,12 @@
       <tr>
         <th>2004 - 2008</th>
         <td>Studium der Medieninformatik an der Beuth Hochschule für Technik, Berlin<br /> 
-          <strong>Abschluss:</strong> <i>Informatiker Diplom (FH)</i></td>
+          Abschluss: <strong>Informatiker Diplom (FH)</strong></td>
       </tr>
       <tr>
         <th>1999 - 2004</th>
         <td>Louise-Schroeder-Gymnasium, München<br />
-          <strong>Abschluss:</strong> <i>Allg. Hochschulreife (Abitur)</i>
+          Abschluss: <strong>Allg. Hochschulreife (Abitur)</strong>
         </td>
       </tr>      
       <tr>
@@ -115,33 +125,33 @@
     <table class="timeline">
       <tr>
         <th>08/2009 - heute</th>
-        <td>Traffic-Dealer GbR, <a href="http://www.traffic-dealer.de">www.traffic-dealer.de</a> , angestellt, CTO<br />
+        <td><strong>Traffic-Dealer GbR</strong>, <a href="http://www.traffic-dealer.de">www.traffic-dealer.de</a> , angestellt, CTO<br />
           <i>Aufgabe:</i> Haupt-Ansprechpartner für alle technischen Fragestellungen im Unternehmen,<br />
           Projektplanung, -implementierung und -betreuung von Web-basierten Applikationen.<br />
           <i>Branche:</i> Internet</td>
       </tr>
       <tr>
         <th>01/2009 - 08/2009</th>
-        <td>Markencafé.de, angestellt<br />
+        <td><strong>Markencafé.de</strong>, angestellt<br />
           <i>Aufgabe:</i> Diplomarbeit zum Thema "Performance- und Sicherheits-Optimierungen<br /> 
           in Ruby on Rails" bei der Firma Rheingau Ventures<br />
           <i>Branche:</i> Internet</td>
       </tr> 
       <tr>
         <th>07/2008 - 12/2008</th>
-        <td>Sportme, <a href="http://www.sportme.de">www.sportme.com</a>, Praktikum<br />
+        <td><strong>Sportme</strong>, <a href="http://www.sportme.de">www.sportme.com</a>, Praktikum<br />
           <i>Aufgabe:</i> 6 Monate Praktikum als Ruby on Rails und Flash/Flex Entwickler<br />
           <i>Branche:</i> Internet</td>
       </tr>
       <tr>
         <th>04/2007 - 08/2008</th>
-        <td>Magix AG, <a href="http://www.magix.de">www.magix.com</a>, Werkstudent<br />
+        <td><strong>Magix AG</strong>, <a href="http://www.magix.de">www.magix.com</a>, Werkstudent<br />
           <i>Aufgabe:</i> Betreuung des Showrooms und die Leitung von Programm-Schulungen<br />
           <i>Branche:</i> Informationstechnologie & -dienste</td>
       </tr>       
       <tr>
         <th>03/2005 - 06/2008</th>
-        <td>BREAD & Butter, <a href="http://www.breadandbutter.com">www.breadandbutter.com</a>, Freelancer<br />
+        <td><strong>BREAD & Butter</strong>, <a href="http://www.breadandbutter.com">www.breadandbutter.com</a>, Freelancer<br />
           <i>Aufgabe:</i> Kundenbetreuung für italienisch-, spanisch- und englischsprachige<br />
           <i>Branche:</i> Mode/Bekleidungsindustrie</td>
       </tr>
@@ -154,7 +164,7 @@
     
     <!-- Sprachen -->
     <h2>Sprachen</h2>
-    <table class="skills">
+    <table class="languages">
       <tr>
         <th>Deutsch</th>
         <td>Muttersprache</td>
@@ -175,54 +185,127 @@
     
     
     <!-- Skills -->
-    <h2>Fähigkeiten</h2>
+    <h2>EDV-Kenntnisse und Technologien</h2>
     <table class="skills">
       <thead>
       <tr>
-        <th class="tbl_head" colspan="2">Front-End</th>
+        <th class="tbl_head" colspan="2">Front-end Entwicklung</th>
       </tr>
-      
-      <tr>
-        <th>bla</th>
-        <td>with any number</td>
-      </tr>    
-      
-      <tr>
-        <th>Blub</th>
-        <td>with any number of li </td>
-      </tr>         
+      </thead>
+      <tbody>
+      <tr><th>(X)HTML</th>    <td>+ + +</td></tr>    
+      <tr><th>CSS 2.1/3</th>  <td>+ + +</td></tr>
+      <tr><th>JavaScript</th> <td>+ +</td></tr>    
+      <tr><td>jQuery</td>     <td>+ + +</td></tr> 
+      <tr><td>Ajax</td>       <td>+ +</td></tr> 
+      <tr><th>Flash | Flex | AS 3.0</th><td>+ +</td></tr> 
+      </tbody>
     </table>
     
     <table class="skills">
       <thead>
       <tr>
-        <th class="tbl_head" colspan="2">Back-End</th>
+        <th class="tbl_head" colspan="2">Back-end Entwicklung</th>
       </tr>
-      
+      </thead>
+      <tbody>
+      <tr><th>Ruby</th>       <td>+ + +</td></tr>    
+      <tr><th>PHP 5</th>      <td>+ + +</td></tr>
+      <tr><th>Lasso 8.6</th>  <td>+ + +</td></tr>    
+      <tr><th>Java</th>       <td>+ +</td></tr> 
+      <tr><th>VB</th>         <td>+</td></tr> 
+      <tr><th>C#</th>         <td>+</td></tr> 
+      </tbody>
+    </table>   
+    
+    <table class="skills">
+      <thead>
       <tr>
-        <th>bla</th>
-        <td>with any number</td>
-      </tr>    
-      
-      <tr>
-        <th>Blub</th>
-        <td>with any number of li </td>
+        <th class="tbl_head" colspan="2">Frameworks und CMS</th>
       </tr>
-    </table>    
+      </thead>
+      <tbody>
+      <tr><th>Ruby on Rails</th> <td>+ + +</td></tr>    
+      <tr><th>Sinatra</th>      <td>+ +</td></tr>
+      <tr><th>CakePHP</th>      <td>+ +</td></tr>
+      <tr><th>Android 2</th>    <td>+ +</td></tr>
+      <td colspan="2"><hr /></td>
+      <tr><th>Wordpress</th>    <td>+ + +</td></tr>    
+      </tbody>
+    </table><br clear="all" /><br />
+    
+    <table class="skills">
+      <thead>
+      <tr>
+        <th class="tbl_head" colspan="2">Datenbanken, Versionskontr. und APS</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr><th>MySQL</th>        <td>+ + +</td></tr>    
+      <tr><th>PostgreSQL</th>   <td>+ +</td></tr>
+      <tr><th>Filemaker</th>    <td>+ + +</td></tr>
+      <tr><th>SQLite</th>       <td>+ +</td></tr>
+      <td colspan="2"><hr /></td>
+      <tr><th>Subversion</th>     <td>+ + +</td></tr>
+      <tr><th>Git</th>            <td>+ +</td></tr>
+      <td colspan="2"><hr /></td>
+      <tr><th>Apache, Passenger, Mongrel</th>  <td>+ +</td></tr>
+      </tbody>
+    </table>   
+    
+    <table class="skills">
+      <thead>
+      <tr>
+        <th class="tbl_head" colspan="2">Sonstige Programme und IDEs</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr><th>3d Studio Max (9.0)</th>  <td>+ + +</td></tr>    
+      <tr><th>Adobe Photoshop</th>      <td>+ + +</td></tr>
+      <tr><th>Adobe Flash</th>          <td>+ +</td></tr>
+      <tr><th>MS Office 2003/2007</th>  <td>+ +</td></tr>
+      <td colspan="2"><hr /></td>
+      <tr><th>Eclipse</th>              <td>+ +</td></tr>
+      <tr><th>NetBeans</th>             <td>+ + +</td></tr>
+      </tbody>
+    </table>       
+    
+    <table class="skills">
+      <thead>
+      <tr>
+        <th class="tbl_head" colspan="2">Betriebssysteme und Virtualisierungen</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr><th>Windows</th>  <td>+ + +</td></tr>         
+      <tr><td>Server (2003, R2008)</td>    <td>+ + +</td></tr>
+      <tr><td>XP, Vista, 7</td>    <td>+ + +</td></tr>
+      <tr><th>Unix</th>      <td>+ +</td></tr>
+      <tr><td>Ubuntu</td>    <td>+ +</td></tr>
+      <tr><td>Debian</td>    <td>+ +</td></tr>
+      <tr><th>Mac OS (x 10.5)</th>  <td>+ +</td></tr>
+      <td colspan="2"><hr /></td>
+      <tr><th>Vmware ESXi 4/5</th>  <td>+ + +</td></tr>
+      <tr><th>Vmware Server 2, Converter</th>  <td>+ + +</td></tr>      
+      </tbody>
+    </table>       
     <br clear="all" />
     
     <!-- Freizeit -->
     <h2>Freizeit und Hobbys</h2>
-    <p>folios, and much more. They can be links or static content.<br />
-      Simple, flexible markup</p>
-    <p>Thumbnail markup is simple—a ul with any number of li elements is all that is required. 
-       It's also super flexible, allowing for any type of content with just a bit more markup to wrap your contents.</p>    
-    <pre class="brush: ruby; ruler: false;">
-      do
-        puts code
-      while world == 'Better Place'  
-    </pre>    
+    <p>Mein Beruf ist meine Passion, ich schreibe also auch in meiner Freizeit gerne Code<br /> 
+      oder versuche mich durch damit verbunde Lektüre (Blogs und Fachliteratur) fortzubilden.</p>
+    <p>Ansonsten versuche ich in meiner Freizeit einen sportlichen Ausgleich zu meiner Arbeit<br /> 
+      zu finden durch u.a. Fußball und Speedminton.</p>
+    <p>Gutes Essen und meinen Horizont durch Reisen zu erweitern sind mir sehr wichtig.</p>  
   </div>
-
+  
+  <!-- Footer -->
+  <ul id="footer">
+    <li><strong>Felix Abele</strong></li>
+    <li>felix.abele@gmail.com</li>
+    <li>Hobrechtstr. 28, 12047 Berlin</li>
+    <li>0176 3838 6281</li>
+  </ul>
 </body>
 </html>
