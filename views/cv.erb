@@ -42,7 +42,7 @@
       .timeline th {padding: 10px 20px 0 20px; }
       
       .skills { font-size: 0.9em}
-      .skills, .languages { float: left; width: 230px; margin: 10px; margin-right: 24px;}
+      .skills, .languages { float: left; width: 230px; margin: 10px 16px 10px 20px;}
       .skills .tbl_head { background-color: #f6f6f6; color: #383838; padding: 3px; border-bottom: 6px solid white}
       .skills tbody tr th, .skills tbody tr td { padding: 4px 0 0 8px; font-size: 0.9em}
  
@@ -53,16 +53,20 @@
       
       a.download_link {
         font-style: italic; color: grey}
+      .skill_rating {
+        margin-left: 30px;}
+      .skill_rating tr td {
+        padding-right: 10px; font-size: 0.8em}      
     </style>    
 </head>
 <body>   
 
   <div id="bd">
 
-    <h1>Felix Abele</h1>
-    <div class="subtitle">Diplom Informatiker (FH) - Webapplication Engineer</div>
-    <img src="/images/felix_abele_half_big.jpg" title="Profilbild" class="profilbild" />
-
+    <h1>Felix Abele</h1>    
+    <div class="subtitle">Diplom Informatiker (FH) - Webapplication Engineer</div>    
+    <img src="/images/felix_abele_half_big.jpg" title="Profilbild" class="profilbild" />          
+         
     <table id="address">
       <tr><th>Geboren:</th><td>22.07.1983, München</td></tr>
       <tr><td colspan="2"><hr /></td></tr>
@@ -76,6 +80,9 @@
           Hobrechtstr. 28,
           12047 Berlin
           <hr />
+          <a href="/documents/Lebenslauf_Felix_Abele_2012.pdf" target="_blank" 
+             title="Lebenslauf mit Anhängen als PDF-Dokument herunterladen">
+            <img src="/images/print_pdf.jpg" alt="Lebenslauf als PDf" /></a>
         </td>
       </tr>      
     </table><br clear="all" />
@@ -90,7 +97,7 @@
     
     <!-- Ziele -->
     <h2>Ziel</h2>
-    <p>Ich suche ein professionelles Umfeld in dem ich mich persönlich und fachlich weiterentwickeln kann.<br />
+    <p>Ich suche ein professionelles Umfeld als Webentwickler in dem ich mich persönlich und fachlich weiterentwickeln kann.<br />
       Einen regen Austausch unter Kollegen mit ambitionierten Zielen. Meinen Beitrag zu qualitativ hochwertiger Software zu leisten.</p>
     <p>Meine Passion für zukunftsorientierte Technologien und Ehrgeiz motivieren mich Projekte ständig weiterzuentwickeln und zu optimieren.</p>    
     
@@ -129,6 +136,7 @@
     
     <!-- Beruf. Lebenslauf -->
     <h2>Beruflicher Werdegang</h2>
+    
     <table class="timeline">
       <tr>
         <th>08/2009 - heute</th>
@@ -197,6 +205,17 @@
     
     <!-- Skills -->
     <h2>EDV-Kenntnisse und Technologien</h2>
+    
+    <p>
+      Mit folgenden Technologien habe ich bisher gearbeitet und Projekte umgesetzt.<br />
+      Meine Ehrfahrung reicht dabei von: <br />
+    </p>
+    <table class="skill_rating">
+      <tr><td>+ + + </td> <td> arbeite ich fast täglich mit</td></tr> 
+      <tr><td>+ + </td>   <td> fühle ich mich recht sicher</td></tr> 
+      <tr><td>+ </td>     <td> habe ich gelernt, aber kaum in Projekten angewendet</td></tr>  
+    </table>    
+    
     <table class="skills">
       <thead>
       <tr>
@@ -249,7 +268,7 @@
     <table class="skills">
       <thead>
       <tr>
-        <th class="tbl_head" colspan="2">Datenbanken, Versionskontr. und APS</th>
+        <th class="tbl_head" colspan="2">Datenbanken, CSV und Appl. Server</th>
       </tr>
       </thead>
       <tbody>
