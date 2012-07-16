@@ -54,12 +54,17 @@ a img {
 
 /* MENU */
 #top_menu {
-    margin: 0; padding: 0; margin-top: -22px;}
+    margin: 0; padding: 0; }
+#inner #top_menu {
+    margin-top: -22px;}
+#bd #top_menu {
+    margin-top: -4px;}
 #top_menu li {
     list-style: none; float: left; padding: 4px 6px 10px 6px; display: blog;
     background: url(../images/tab.png) no-repeat bottom center; width: 126px; text-align: center;}
 #top_menu li a {
-    text-decoration: none; color: #a0a0a0; font-family: Georgia,serif; letter-spacing:2px }
+    text-decoration: none; color: #a0a0a0; font-family: Georgia,serif; letter-spacing:2px; }
+#top_menu li:first-letter { font-weight: bold; font-size: 1.2em }
 
 /* Skippers */
 #skip_right, #skip_left, #go_left, #go_right {

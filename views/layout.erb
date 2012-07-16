@@ -44,12 +44,9 @@
 </head>
 <body>   
 
-  <div id="inner">
+  <div id="inner">   
     
-    <ul id="top_menu">
-      <li><a href="/"><b>P</b>rojekte</a></li>
-      <li><a href="/code"><b>C</b>ode</a></li>
-    </ul><br clear="all" /><br />         
+    <%= erb(:_menu, :layout => false) %>
     
     <%= yield %>  
   </div>
