@@ -29,7 +29,11 @@ end
 # => Curriculum Vitae
 # ===============================
 get '/curriculum-vitae' do
-  erb :cv, :layout => false
+  if params[:print]
+    erb :cv_print, :layout => false
+  else
+    erb :cv, :layout => false
+  end
 end
 
 # ===============================
