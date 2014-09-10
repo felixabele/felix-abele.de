@@ -12,8 +12,7 @@ require './models/project'
 # => Start
 # ===============================
 get '/' do
-  @projects = Project.find(:all, 
-    :select => "id, title, year, month, private, effort")
+  @projects = Project.select("id, title, year, month, private, effort").all
   erb :index
 end
 

@@ -10,7 +10,7 @@ var projectGraph = (function () {
     var element_id = 'stageCanvas';
 
     // Timeline Parameters
-    var glob_shadow = new Shadow("#ffffff", 2, 2, 4);
+    var glob_shadow = new createjs.Shadow("#ffffff", 2, 2, 4);
     var glob_color = "#808080";
     var glob = {height:400, width:700}
     var tl_start = {x:0, y:(glob.height/2)};
@@ -57,11 +57,11 @@ var projectGraph = (function () {
 
     // Draw a Line from to
     var draw_line = function (start, end) {
-        var g = new Graphics();
+        var g = new createjs.Graphics();
         g.setStrokeStyle(0.8);
         g.beginStroke(glob_color);
         g.moveTo((start.x), start.y).lineTo((end.x+80), end.y);
-        var s = new Shape(g);
+        var s = new createjs.Shape(g);
         s.shadow = glob_shadow;
         stage.addChild(s);
     }
@@ -71,12 +71,12 @@ var projectGraph = (function () {
         var line_end = (proj.dir == 'up') ? (tl_start.y-proj.height) : (tl_start.y+proj.height);
         var r = 6;
 
-        var g = new Graphics();
+        var g = new createjs.Graphics();
         g.setStrokeStyle(1);
         g.beginStroke(glob_color);
         g.beginFill("#FFFFFF").drawCircle(0, 0, r);
         g.beginFill("#FFFFFF").drawCircle(0, 0, (r-3));
-        var s = new Shape(g);
+        var s = new createjs.Shape(g);
         s.x = x;
         s.y = line_end;
         s.shadow = glob_shadow;
@@ -99,23 +99,24 @@ var projectGraph = (function () {
             open_fancy(proj);
         }
         
-        Ticker.addListener(stage);
+        //createjs.Ticker.addListener(stage);
+        createjs.Ticker.addEventListener("tick", stage);
     }
 
     // Draw a vertical Line (connected to the Timeline)
     var draw_vertical = function (from, proj) {
         var line_end = (proj.dir == 'up') ? (tl_start.y-proj.height) : (tl_start.y+proj.height);
         var text_posi = (proj.dir == 'up') ? (line_end-26) : (line_end+16);
-        var g = new Graphics();
+        var g = new createjs.Graphics();
         g.setStrokeStyle(0.8);
         g.beginStroke(glob_color);
         g.moveTo(from, tl_start.y).lineTo(from, line_end);
-        var s = new Shape(g);
+        var s = new createjs.Shape(g);
         s.shadow = glob_shadow;
         stage.addChild(s);
 
         // Text hinzufügen
-        var txt = new Text(proj.title, "9pt Trebuchet MS,Arial,sans-serif", glob_color);
+        var txt = new createjs.Text(proj.title, "9px Trebuchet MS,Arial,sans-serif", glob_color);
         txt.textBaseline = "top";
         txt.y = text_posi;
         txt.x = (from-25);
@@ -130,16 +131,16 @@ var projectGraph = (function () {
     var draw_year = function (x, txt) {
 
         var padding = 20;
-        var g = new Graphics();
+        var g = new createjs.Graphics();
         g.setStrokeStyle(1);
         g.beginStroke("#3333CC");
         g.moveTo(x, padding).lineTo(x, glob.height-padding);
-        var s = new Shape(g);
+        var s = new createjs.Shape(g);
         s.alpha = 0.3;
         stage.addChild(s);
 
         // Draw Year
-        var txt = new Text(txt, "10pt Georgia,serif", "#3333CC");
+        var txt = new createjs.Text(txt, "10px Georgia,serif", "#3333CC");
         txt.textBaseline = "top";
         txt.x = (x-15);
         stage.addChild(txt);
@@ -211,7 +212,7 @@ var projectGraph = (function () {
 
         //get a reference to the canvas element
         var canvas = document.getElementById(element_id);
-        stage = new Stage(canvas);
+        stage = new createjs.Stage(canvas);
         stage.enableMouseOver(10); // enabled mouse over / out events
 
         // Draw Timeline
