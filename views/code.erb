@@ -28,7 +28,7 @@
                 <%= map.ref_point %>
             }                    
         });
-
+        
         $(el_id).data('geocloud').drawPoints([
           <% map.cities.each do |city| %>
             {title : '<%= city.title %>', size: <%= city.size %>, coord: [<%= city.lon %>, <%= city.lat %>]},    
