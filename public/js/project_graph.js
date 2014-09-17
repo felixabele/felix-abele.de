@@ -6,7 +6,6 @@
 var projectGraph = (function () {
 
     var stage;
-    var update = true;
     var element_id = 'stageCanvas';
 
     // Timeline Parameters
@@ -47,14 +46,6 @@ var projectGraph = (function () {
         });   
     }
 
-    var tick = function () {
-        // this set makes it so the stage only re-renders when an event handler indicates a change has happened.
-        if (update) {
-            update = false; // only update once
-            stage.update();
-        }
-    }
-
     // Draw a Line from to
     var draw_line = function (start, end) {
         var g = new createjs.Graphics();
@@ -83,24 +74,21 @@ var projectGraph = (function () {
         stage.addChild(s);
 
         // -- Mouse Events
-        s.onMouseOver = function() {
+         s.addEventListener("click", function() {
+            open_fancy(proj);
+         });
+         s.addEventListener("mouseover", function() {
             s.scaleX = 1.4;
             s.scaleY = 1.4;
             $('body').css( 'cursor', 'pointer' ); // Change Cursor to pointer
-            update = true;
-        }
-        s.onMouseOut = function() {
+            stage.update();
+         });
+         s.addEventListener("mouseout", function() {
             s.scaleX = 1;
             s.scaleY = 1;
             $('body').css( 'cursor', 'default' ); // Change Cursor back to default
-            update = true;
-        }
-        s.onPress = function() {
-            open_fancy(proj);
-        }
-        
-        //createjs.Ticker.addListener(stage);
-        createjs.Ticker.addEventListener("tick", stage);
+            stage.update();
+         });         
     }
 
     // Draw a vertical Line (connected to the Timeline)
@@ -116,7 +104,7 @@ var projectGraph = (function () {
         stage.addChild(s);
 
         // Text hinzufügen
-        var txt = new createjs.Text(proj.title, "9px Trebuchet MS,Arial,sans-serif", glob_color);
+        var txt = new createjs.Text(proj.title, "9px Trebuchet MS,Arial,sans-serif", '#383838');
         txt.textBaseline = "top";
         txt.y = text_posi;
         txt.x = (from-25);
